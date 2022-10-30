@@ -25,12 +25,12 @@ const Hero = (props: Props) => {
         initial={{
           rotateX: 0,
           opacity: 0,
-          scale: 3,
+          scale: 1,
         }}
         animate={{
           rotateX: 720,
-          opacity: 1,
-          scale: 1,
+          opacity: [0.3, 0.7, 1],
+          scale: [3,1],
         }}
         transition={{
           duration: 3.5,
