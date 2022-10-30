@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -7,9 +8,8 @@ export default function Home() {
     <div>
       <Head>
         <title>Create Next App</title>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
       </Head>
-
+      <Header />
       {/* header */}
       {/* hero*/}
       {/* Experience */}
