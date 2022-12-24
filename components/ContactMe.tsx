@@ -1,8 +1,11 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from "typings";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
 type Inputs = {
   name: string;
@@ -11,7 +14,7 @@ type Inputs = {
   message: string;
 };
 
-const ContactMe = (props: Props) => {
+const ContactMe = ({ pageInfo }: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     window.location.href = `mailto:joshmclain45@gmail.com?subject=${data.subject}
@@ -31,15 +34,15 @@ const ContactMe = (props: Props) => {
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#88d498] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+1234567890</p>
+            <p className="text-2xl">{pageInfo.phoneNumber}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#88d498] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">sparky@sharklasers.net</p>
+            <p className="text-2xl">{pageInfo.email}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#88d498] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Phoenix, AZ</p>
+            <p className="text-2xl">{pageInfo.address}</p>
           </div>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
@@ -51,7 +54,7 @@ const ContactMe = (props: Props) => {
           <textarea {...register('message')} placeholder="Message" className="contactInput" />
           <button
             type="submit"
-            className="bg-[#88d498]/50 py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-[#88d498]/50 py-5 px-10 rounded-md text-black hover:text-gray-300 font-bold text-lg hover:border-b hover:border-gray-300"
           >
             Submit
           </button>

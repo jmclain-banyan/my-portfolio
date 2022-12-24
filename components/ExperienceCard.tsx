@@ -1,13 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
-import DragonCat from "public/assets/img/dragonCat.jpg";
+// import DragonCat from "public/assets/img/dragonCat.jpg";
 import { motion } from "framer-motion";
-// https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg
+import { Experience } from "typings";
+import { urlFor } from "sanity";
 
-type Props = {};
+type Props = {
+  experience: Experience;
+};
 
-const ExperienceCard = (props: Props) => {
+const ExperienceCard = ({ experience }: Props) => {
   return (
     <article
       className={`flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 
@@ -22,46 +25,38 @@ const ExperienceCard = (props: Props) => {
       >
         <Image
           className="h-32 w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-          src={DragonCat}
-          alt="dragon cats dev logo"
+          src={urlFor(experience?.companyImage).url()}
+          alt={experience.companyName}
+          width={200}
+          height={200}
         />
       </motion.div>
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">CTO of Dragon Cats Media</h4>
-        <p className="font-bold text-2xl mt-1">Dragon Cats Media</p>
+        <h4 className="text-4xl font-light">{experience.jobTitle}</h4>
+        <p className="font-bold text-2xl mt-1">{experience.companyName}</p>
         <div className="flex space-x-2 my-2">
-          <img
-            className="rounded-full h-10 w-10"
-            height={10}
-            width={10}
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-            alt=""
-          />
-          <img
-            className="rounded-full h-10 w-10"
-            height={10}
-            width={10}
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-            alt=""
-          />
-          <img
-            className="rounded-full h-10 w-10"
-            height={10}
-            width={10}
-            src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-            alt=""
-          />
-          {/* tech used  */}
-          {/* tech used  */}
-          {/* tech used  */}
+          {experience.technologies.map((technology) => (
+            <Image
+              key={technology._id}
+              className="rounded-full h-10 w-10"
+              src={urlFor(technology.image).url()}
+              alt={technology.title}
+              width={40}
+              height={40}
+            />
+          ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">start... - end...</p>
+        <p className="uppercase py-5 text-gray-300">
+          <>
+            {experience.dateStarted} -{" "}
+            {experience.isCurrentlyWorkingHere
+              ? "Current"
+              : experience.dateEnded}
+          </>
+        </p>
 
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>summy point</li>
-          <li>summy point</li>
-          <li>summy point</li>
-          <li>summy point</li>
+          {experience.points.map((point, index) => <li key={index}>{point}</li>)}
         </ul>
       </div>
     </article>

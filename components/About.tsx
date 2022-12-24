@@ -1,11 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import UserImage from "public/assets/img/kingOfDemons.jpg";
+import { PageInfo } from "typings";
+import { urlFor } from "sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
   return (
     <div 
     className="h-screen flex flex-col text-center md:text-left md:flex-row max-w-7xl justify-evenly px-10 mx-auto items-center relative">
@@ -21,8 +24,10 @@ const About = (props: Props) => {
       >
         <Image
           className="-mb-20 md:mb-0 flex-shrink-1 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] border-2 border-white"
-          src={UserImage}
+          src={urlFor(pageInfo?.profilePic).url()}
           alt="User Image"
+          width={750}
+          height={1000}
         />
       </motion.div>
       <motion.div
@@ -32,10 +37,7 @@ const About = (props: Props) => {
       transition={{ duration: 1.5 }}
        className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">Here is a <span className="underline decoration-green-500/50">little</span> background</h4>
-        <p className="text-base md:w-[400px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem alias mollitia, impedit eos sunt nemo officiis, assumenda similique porro rerum cum quod? Rem ipsam autem ad deserunt id perspiciatis adipisci.
-        Eum eveniet minus consequatur molestiae, impedit facere nulla nemo velit, dolore placeat neque quisquam dolores doloribus aliquid at, accusantium adipisci. Omnis perferendis quasi nostrum non magni, commodi unde ratione molestiae.
-        Odio, asperiores? Corporis officia rerum nam ipsum voluptates voluptate nihil. Accusantium quis vitae possimus alias! Eligendi placeat nobis tenetur delectus labore temporibus sapiente! Quia, ipsa ad officia harum ut minus!
-        Maiores distinctio, consectetur voluptatem maxime ad sit soluta. Sunt, enim odio, eaque temporibus consequatur corrupti error esse animi totam explicabo nulla delectus eos tempore odit accusantium aperiam dolore! Dolore, atque?</p>
+        <p className="text-base md:w-[400px]">{pageInfo?.backgroundInformation}</p>
       </motion.div>
     </div>
   );

@@ -5,13 +5,17 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import UserAvatar from "public/assets/img/avatar-370.svg";
 import { motion } from "framer-motion";
+import { PageInfo } from "typings";
+import { urlFor } from "sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-const Hero = (props: Props) => {
+const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Hello Universe, the name is Josh.",
+      `Hello Universe, the name is ${pageInfo?.name}.`,
       "const iDoCode: boolean = true;",
       "CoolCodingCat.tsx",
     ],
@@ -30,7 +34,7 @@ const Hero = (props: Props) => {
         animate={{
           rotateX: 720,
           opacity: [0.3, 0.7, 1],
-          scale: [3,1],
+          scale: [3, 1],
         }}
         transition={{
           duration: 3.5,
@@ -38,15 +42,15 @@ const Hero = (props: Props) => {
       >
         <Image
           className="relative h-32 w-32 mx-auto rounded-full object-cover"
-          src={UserAvatar}
+          src={
+            pageInfo?.heroImage ? urlFor(pageInfo.heroImage).url() : UserAvatar
+          }
           alt="Josh Avatar"
         />
       </motion.div>
       <div className="z-20">
-        <h2 className="text-small uppercase text-gray-400 tracking-[8px] pb-2">
-          {"<Software Engineer />"}
-          <br />
-          {"<Web Developer />"}
+        <h2 className="text-small uppercase text-gray-400 tracking-[8px] pb-2 flex flex-col">
+          <span>{`<${pageInfo?.role} />`}</span>
         </h2>
         <h1 className="text-3xl lg:text-6xl md:text-5xl sm:text-4xl font-semibold px-10">
           <span className="text-white mr-3">{text}</span>
