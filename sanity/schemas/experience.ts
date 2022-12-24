@@ -50,5 +50,10 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
     },
+    {
+      name: 'position',
+      title: 'Position',
+      type: 'number',
+    }
   ],
 })

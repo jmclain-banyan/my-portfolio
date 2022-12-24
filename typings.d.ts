@@ -18,11 +18,12 @@ export interface PageInfo extends SanityBody {
   address: string;
   backgroundInformation: string;
   email: string;
-  role: string;
+  roles: string[];
   heroImage: Image;
   name: string;
   phoneNumber: string;
   profilePic: Image;
+  typewriter: string[];
 }
 
 export interface Technology extends SanityBody {
@@ -49,6 +50,7 @@ export interface Experience extends SanityBody {
   jobTitle: string;
   points: string[];
   technologies: Technology[];
+  position: number;
 }
 
 export interface Project extends SanityBody {
@@ -58,6 +60,7 @@ export interface Project extends SanityBody {
   linkToBuild: string;
   summary: string;
   technologies: Technology[];
+  position: number;
 }
 
 export interface Social extends SanityBody {

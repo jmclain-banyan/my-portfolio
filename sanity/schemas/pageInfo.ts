@@ -11,9 +11,16 @@ export default defineType({
       type: 'string',
     },
     {
-      name: 'role',
-      title: 'Role',
-      type: 'string',
+      name: 'roles',
+      title: 'Roles',
+      type: 'array',
+      of: [{ type: 'string' }]
+    },
+    {
+      name: 'typewriter',
+      title: 'Typewriter',
+      type: 'array',
+      of: [{ type: 'string' }]
     },
     {
       name: 'heroImage',
@@ -26,7 +33,7 @@ export default defineType({
     {
       name: 'backgroundInformation',
       title: 'BackgroundInformation',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'profilePic',

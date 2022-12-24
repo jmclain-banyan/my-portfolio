@@ -11,6 +11,12 @@ type Props = {
 };
 
 const ExperienceCard = ({ experience }: Props) => {
+  const formatDateString = (date: Date) =>
+    new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "short",
+    }).format(new Date(date));
+
   return (
     <article
       className={`flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 
@@ -48,15 +54,17 @@ const ExperienceCard = ({ experience }: Props) => {
         </div>
         <p className="uppercase py-5 text-gray-300">
           <>
-            {experience.dateStarted} -{" "}
+            {formatDateString(experience.dateStarted)} -{" "}
             {experience.isCurrentlyWorkingHere
               ? "Current"
-              : experience.dateEnded}
+              : formatDateString(experience.dateEnded)}
           </>
         </p>
 
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          {experience.points.map((point, index) => <li key={index}>{point}</li>)}
+          {experience.points.map((point, index) => (
+            <li key={index}>{point}</li>
+          ))}
         </ul>
       </div>
     </article>
