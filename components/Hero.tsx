@@ -5,8 +5,8 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import UserAvatar from "public/assets/img/avatar-370.svg";
 import { motion } from "framer-motion";
-import { PageInfo } from "typings";
-import { urlFor } from "sanity";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
 type Props = {
   pageInfo: PageInfo;

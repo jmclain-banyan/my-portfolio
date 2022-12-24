@@ -2,8 +2,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import { motion } from "framer-motion";
-import { urlFor } from "sanity";
-import { Project } from "typings";
+import { urlFor } from "../sanity";
+import { Project } from "../typings";
 import Image from "next/image";
 
 type Props = {

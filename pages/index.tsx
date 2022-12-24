@@ -1,20 +1,20 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import About from "components/About";
-import WorkExperience from "components/WorkExperience";
-import Skills from "components/Skills";
-import Projects from "components/Projects";
-import ContactMe from "components/ContactMe";
+import About from "../components/About";
+import WorkExperience from "../components/WorkExperience";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import ContactMe from "../components/ContactMe";
 import type { GetStaticProps } from "next";
-import { Experience, PageInfo, Project, Skill, Social } from "typings";
+import { Experience, PageInfo, Project, Skill, Social } from "../typings";
 import {
   fetchExperiences,
   fetchPageInfo,
   fetchProjects,
   fetchSkills,
   fetchSocials,
-} from "utils/fetchDataHelpers";
+} from "../utils/fetchDataHelpers";
 
 type Props = {
   pageInfo: PageInfo;

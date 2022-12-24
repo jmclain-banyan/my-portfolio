@@ -3,8 +3,8 @@ import React from "react";
 import Image from "next/image";
 // import DragonCat from "public/assets/img/dragonCat.jpg";
 import { motion } from "framer-motion";
-import { Experience } from "typings";
-import { urlFor } from "sanity";
+import { Experience } from "../typings";
+import { urlFor } from "../sanity";
 
 type Props = {
   experience: Experience;

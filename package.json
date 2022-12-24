@@ -1,5 +1,5 @@
 {
-  "name": "youtube-portfolio",
+  "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,8 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.41.0",
     "react-simple-typewriter": "^4.0.5",
-    "react-social-icons": "^5.15.0"
+    "react-social-icons": "^5.15.0",
+    "sanity": "^3.1.2"
   },
   "devDependencies": {
     "@types/node": "18.11.7",
