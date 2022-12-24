@@ -20,7 +20,8 @@
     "react-hook-form": "^7.41.0",
     "react-simple-typewriter": "^4.0.5",
     "react-social-icons": "^5.15.0",
-    "sanity": "^3.0.0"
+    "sanity": "^3.0.0",
+    "@sanity/vision": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "18.11.7",
