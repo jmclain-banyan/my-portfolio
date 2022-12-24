@@ -24,7 +24,7 @@ const Skills = ({skills}: Props) => {
       </h3>
 
       <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-5">
-        {skills.map((skill, index) => <Skill directionLeft={index % 2 === 0} key={skill._id} skill={skill} />)}
+        {skills?.map((skill, index) => <Skill directionLeft={index % 2 === 0} key={skill._id} skill={skill} />)}
       </div>
     </motion.div>
   );

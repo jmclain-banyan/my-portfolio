@@ -39,7 +39,7 @@ const Hero = ({ pageInfo }: Props) => {
         <Image
           className="relative h-32 w-32 mx-auto rounded-full object-cover"
           src={
-            pageInfo?.heroImage ? urlFor(pageInfo.heroImage).url() : UserAvatar
+            pageInfo?.heroImage ? urlFor(pageInfo?.heroImage).url() : UserAvatar
           }
           alt="Josh Avatar"
         />

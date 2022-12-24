@@ -22,14 +22,13 @@ const Projects = ({ projects }: Props) => {
         Projects
       </h3>
       <div className="relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#88d498]/80">
-        {projects
-          .sort((a, b) => a.position - b.position)
+        {projects?.sort((a, b) => a.position - b.position)
           .map((project, index) => (
             <div
-              key={project._id}
+              key={project?._id}
               className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44"
             >
-              <a href={project.linkToBuild} target="_blank" rel="noopener noreferrer">
+              <a href={project?.linkToBuild} target="_blank" rel="noopener noreferrer">
                 <motion.img
                   initial={{
                     y: -300,
@@ -38,7 +37,7 @@ const Projects = ({ projects }: Props) => {
                   transition={{ duration: 1.2 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  src={urlFor(project.image).url()}
+                  src={urlFor(project?.image).url()}
                   className="w-[auto] h-[auto] md:h-[300px]"
                 />
               </a>
@@ -46,17 +45,17 @@ const Projects = ({ projects }: Props) => {
               <div className="space-y-10 md:px-10 max-w-6xl">
                 <h4 className="text-4xl font-semibold text-center">
                   <span className="underline decoration-[#88d498]/50">
-                    Project {index + 1} of {projects.length}:
+                    Project {index + 1} of {projects?.length}:
                   </span>{" "}
-                  {project.title}
+                  {project?.title}
                 </h4>
                 <div className="flex items-center justify-center space-x-3">
-                  {project.technologies.map((technology) => (
+                  {project?.technologies?.map((technology) => (
                     <Image
                       className="h-10 w-10 rounded-full"
                       key={technology._id}
                       src={urlFor(technology?.image).url()}
-                      alt={technology.title}
+                      alt={technology?.title}
                       height={50}
                       width={50}
                     />
@@ -64,7 +63,7 @@ const Projects = ({ projects }: Props) => {
                 </div>
 
                 <p className="text-lg text-center md:text-left">
-                  {project.summary}
+                  {project?.summary}
                 </p>
               </div>
             </div>

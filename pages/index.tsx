@@ -34,7 +34,7 @@ export default function Home({
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0 overflow-y-scroll overflow-x-hidden scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#88d498]/80">
       <Head>
-        <title>{`${pageInfo.name} - Portfolio`}</title>
+        <title>{`${pageInfo?.name} - Portfolio`}</title>
       </Head>
       <Header socials={socials} />
       <section id="hero" className="snap-start">

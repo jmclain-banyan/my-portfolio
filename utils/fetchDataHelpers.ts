@@ -1,4 +1,4 @@
-import { Skill, Social, Project, Experience, PageInfo } from "typings";
+import { Skill, Social, Project, Experience, PageInfo } from "../typings";
 
 const API_URL = process.env.NEXT_PUBLIC_BASE_URL;
 

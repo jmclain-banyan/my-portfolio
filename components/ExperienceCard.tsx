@@ -32,21 +32,21 @@ const ExperienceCard = ({ experience }: Props) => {
         <Image
           className="h-32 w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
           src={urlFor(experience?.companyImage).url()}
-          alt={experience.companyName}
+          alt={experience?.companyName}
           width={200}
           height={200}
         />
       </motion.div>
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">{experience.jobTitle}</h4>
-        <p className="font-bold text-2xl mt-1">{experience.companyName}</p>
+        <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
+        <p className="font-bold text-2xl mt-1">{experience?.companyName}</p>
         <div className="flex space-x-2 my-2">
-          {experience.technologies.map((technology) => (
+          {experience?.technologies?.map((technology) => (
             <Image
               key={technology._id}
               className="rounded-full h-10 w-10"
-              src={urlFor(technology.image).url()}
-              alt={technology.title}
+              src={urlFor(technology?.image).url()}
+              alt={technology?.title}
               width={40}
               height={40}
             />
@@ -54,15 +54,15 @@ const ExperienceCard = ({ experience }: Props) => {
         </div>
         <p className="uppercase py-5 text-gray-300">
           <>
-            {formatDateString(experience.dateStarted)} -{" "}
-            {experience.isCurrentlyWorkingHere
+            {formatDateString(experience?.dateStarted)} -{" "}
+            {experience?.isCurrentlyWorkingHere
               ? "Current"
-              : formatDateString(experience.dateEnded)}
+              : formatDateString(experience?.dateEnded)}
           </>
         </p>
 
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          {experience.points.map((point, index) => (
+          {experience?.points?.map((point, index) => (
             <li key={index}>{point}</li>
           ))}
         </ul>
