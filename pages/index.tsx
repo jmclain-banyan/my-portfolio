@@ -55,6 +55,7 @@ export default function Home({
       <section id="contact" className="snap-start">
         <ContactMe pageInfo={pageInfo} />
       </section>
+      <h1>Nothing Nevermore</h1>
     </div>
   );
 }

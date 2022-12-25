@@ -1,23 +1,27 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCircles from "./BackgroundCircles";
-import UserAvatar from "public/assets/img/avatar-370.svg";
-import { motion } from "framer-motion";
-import { PageInfo } from "../typings";
-import { urlFor } from "../sanity";
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import {Cursor, useTypewriter} from 'react-simple-typewriter'
+import BackgroundCircles from './BackgroundCircles'
+import UserAvatar from 'public/assets/img/avatar-370.svg'
+import {motion} from 'framer-motion'
+import {PageInfo} from '../typings'
+import {urlFor} from '../sanity'
 
 type Props = {
-  pageInfo: PageInfo;
-};
+  pageInfo: PageInfo
+}
 
-const Hero = ({ pageInfo }: Props) => {
+const Hero = ({pageInfo}: Props) => {
   const [text] = useTypewriter({
-    words: [...pageInfo.typewriter],
+    words: [
+      'Hello Universe, the name is Josh.',
+      'const iDoCode: boolean = true;',
+      'CoolCodingCat.tsx',
+    ],
     loop: true,
     delaySpeed: 3000,
-  });
+  })
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
@@ -38,20 +42,24 @@ const Hero = ({ pageInfo }: Props) => {
       >
         <Image
           className="relative h-32 w-32 mx-auto rounded-full object-cover"
-          src={
-            pageInfo?.heroImage ? urlFor(pageInfo?.heroImage).url() : UserAvatar
-          }
+          src={pageInfo?.heroImage ? urlFor(pageInfo?.heroImage).url() : UserAvatar}
           alt="Josh Avatar"
         />
       </motion.div>
       <div className="z-20">
         <div className="pb-2 flex flex-col">
-          {pageInfo?.roles?.map((role, index) => (
+          {/* {pageInfo?.roles?.map((role, index) => (
             <h2
               key={index}
               className="text-small uppercase text-gray-400 tracking-[8px]"
             >{`<${role} />`}</h2>
-          ))}
+          ))} */}
+          <h2 className="text-small uppercase text-gray-400 tracking-[8px]">
+            &lt;Web Developer /&gt;
+          </h2>
+          <h2 className="text-small uppercase text-gray-400 tracking-[8px]">
+            &lt;Software Engineer /&gt;
+          </h2>
         </div>
 
         <h1 className="text-3xl lg:text-6xl md:text-5xl sm:text-4xl font-semibold px-10">
@@ -74,7 +82,7 @@ const Hero = ({ pageInfo }: Props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

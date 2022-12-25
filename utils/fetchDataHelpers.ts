@@ -20,14 +20,14 @@ export const fetchProjects = async () => {
   const res = await fetch(`${API_URL}/api/getProjects`);
   const data = await res.json();
   const projects: Project[] = data.projects;
-  return projects;
+  return projects.sort((a, b) => a.position - b.position);
 };
 
 export const fetchExperiences = async () => {
   const res = await fetch(`${API_URL}/api/getExperiences`);
   const data = await res.json();
   const experiences: Experience[] = data.experiences;
-  return experiences;
+  return experiences.sort((a, b) => a.position - b.position);
 };
 
 export const fetchPageInfo = async () => {

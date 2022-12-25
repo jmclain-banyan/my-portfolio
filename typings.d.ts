@@ -18,12 +18,12 @@ export interface PageInfo extends SanityBody {
   address: string;
   backgroundInformation: string;
   email: string;
-  roles: string[];
+  // roles: string[];
   heroImage: Image;
   name: string;
   phoneNumber: string;
   profilePic: Image;
-  typewriter: string[];
+  // typewriter: string[];
 }
 
 export interface Technology extends SanityBody {
