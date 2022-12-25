@@ -15,9 +15,7 @@ type Props = {
 const Hero = ({pageInfo}: Props) => {
   const [text] = useTypewriter({
     words: [
-      'Hello Universe, the name is Josh.',
-      'const iDoCode: boolean = true;',
-      'CoolCodingCat.tsx',
+      ...pageInfo?.typewriter,
     ],
     loop: true,
     delaySpeed: 3000,
@@ -48,18 +46,12 @@ const Hero = ({pageInfo}: Props) => {
       </motion.div>
       <div className="z-20">
         <div className="pb-2 flex flex-col">
-          {/* {pageInfo?.roles?.map((role, index) => (
+          {pageInfo?.roles.map((role, index) => (
             <h2
               key={index}
               className="text-small uppercase text-gray-400 tracking-[8px]"
             >{`<${role} />`}</h2>
-          ))} */}
-          <h2 className="text-small uppercase text-gray-400 tracking-[8px]">
-            &lt;Web Developer /&gt;
-          </h2>
-          <h2 className="text-small uppercase text-gray-400 tracking-[8px]">
-            &lt;Software Engineer /&gt;
-          </h2>
+          ))}
         </div>
 
         <h1 className="text-3xl lg:text-6xl md:text-5xl sm:text-4xl font-semibold px-10">
