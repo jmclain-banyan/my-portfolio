@@ -42,6 +42,8 @@ const Hero = ({pageInfo}: Props) => {
           className="relative h-24 w-24 sm:h-32 sm:w-32 mx-auto rounded-full object-cover"
           src={pageInfo?.heroImage ? urlFor(pageInfo?.heroImage).url() : UserAvatar}
           alt="Josh Avatar"
+          height={1008}
+          width={756}
         />
       </motion.div>
       <div className="z-20">
