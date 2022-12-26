@@ -26,23 +26,23 @@ const ContactMe = ({ pageInfo }: Props) => {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact me
       </h3>
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col space-y-5 md:space-y-10">
+        <h4 className="text-base md:text-4xl font-semibold text-center">
           I&apos;ve got just what you need.{" "}
           <span className="decoration-[#88d498]/50 underline">Lets talk.</span>
         </h4>
-        <div className="space-y-10">
+        <div className="space-y-5 md:space-y-10 text-">
           <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#88d498] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">{pageInfo?.phoneNumber}</p>
+            <PhoneIcon className="text-[#88d498] h-5 w-5 sm:w-7 sm:h-7 animate-pulse" />
+            <p className="text-md sm:text-base md:text-2xl">{pageInfo?.phoneNumber}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#88d498] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">{pageInfo?.email}</p>
+            <EnvelopeIcon className="text-[#88d498] h-5 w-5 sm:w-7 sm:h-7 animate-pulse" />
+            <p className="text-md sm:text-base md:text-2xl">{pageInfo?.email}</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#88d498] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">{pageInfo?.address}</p>
+            <MapPinIcon className="text-[#88d498] h-5 w-5 sm:w-7 sm:h-7 animate-pulse" />
+            <p className="text-md sm:text-base md:text-2xl">{pageInfo?.address}</p>
           </div>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">

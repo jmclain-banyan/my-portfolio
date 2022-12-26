@@ -39,7 +39,7 @@ const Hero = ({pageInfo}: Props) => {
         }}
       >
         <Image
-          className="relative h-32 w-32 mx-auto rounded-full object-cover"
+          className="relative h-24 w-24 sm:h-32 sm:w-32 mx-auto rounded-full object-cover"
           src={pageInfo?.heroImage ? urlFor(pageInfo?.heroImage).url() : UserAvatar}
           alt="Josh Avatar"
         />
@@ -49,12 +49,12 @@ const Hero = ({pageInfo}: Props) => {
           {pageInfo?.roles.map((role, index) => (
             <h2
               key={index}
-              className="text-small uppercase text-gray-400 tracking-[8px]"
+              className="uppercase text-xs sm:text-sm md:text-lg text-gray-400 tracking-[8px]"
             >{`<${role} />`}</h2>
           ))}
         </div>
 
-        <h1 className="text-3xl lg:text-6xl md:text-5xl sm:text-4xl font-semibold px-10">
+        <h1 className="text-1xl lg:text-5xl md:text-4xl sm:text-3xl xl:text-6xl font-semibold px-10">
           <span className="text-white mr-3">{text}</span>
           <Cursor cursorColor="green" />
         </h1>

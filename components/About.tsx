@@ -24,7 +24,7 @@ const About = ({ pageInfo }: Props) => {
         transition={{ duration: 1.2 }}
       >
         <Image
-          className="-mb-20 md:mb-0 flex-shrink-1 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] border-2 border-white"
+          className="-mb-32 sm:-mb-20 md:mb-0 flex-shrink-1 w-32 h-32 sm:w-52 sm:h-52 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px] border-2 border-white"
           src={urlFor(pageInfo?.profilePic).url()}
           alt="User Image"
           width={750}
@@ -37,8 +37,8 @@ const About = ({ pageInfo }: Props) => {
       viewport={{ once: true }}
       transition={{ duration: 1.5 }}
        className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">Here is a <span className="underline decoration-green-500/50">little</span> background</h4>
-        <p className="text-base md:w-[400px]">{pageInfo?.backgroundInformation}</p>
+        <h4 className="text-3xl md:text-4xl font-semibold">Here is a <span className="underline decoration-green-500/50">little</span> background</h4>
+        <p className="text-sm sm:text-base md:w-[400px]">{pageInfo?.backgroundInformation}</p>
       </motion.div>
     </div>
   );

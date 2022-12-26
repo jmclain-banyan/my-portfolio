@@ -23,12 +23,12 @@ const Projects = ({projects}: Props) => {
         {projects?.map((project, index) => (
           <div
             key={project?._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-2 sm:p-10 md:p-44"
           >
             <a href={project?.linkToBuild} target="_blank" rel="noopener noreferrer">
               <motion.img
                 initial={{
-                  y: -300,
+                  y: -50,
                   opacity: 0,
                 }}
                 transition={{duration: 1.2}}
@@ -40,7 +40,7 @@ const Projects = ({projects}: Props) => {
             </a>
 
             <div className="space-y-10 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+              <h4 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center">
                 <span className="underline decoration-[#88d498]/50">
                   Project {index + 1} of {projects?.length}:
                 </span>{' '}
@@ -49,7 +49,7 @@ const Projects = ({projects}: Props) => {
               <div className="flex items-center justify-center space-x-3">
                 {project?.technologies?.map((technology) => (
                   <Image
-                    className="h-10 w-10 rounded-full"
+                    className="h-7 w-7 sm:h-10 sm:w-10 rounded-full"
                     key={technology._id}
                     src={urlFor(technology?.image).url()}
                     alt={technology?.title}
@@ -59,7 +59,7 @@ const Projects = ({projects}: Props) => {
                 ))}
               </div>
 
-              <p className="text-lg text-center md:text-left">{project?.summary}</p>
+              <p className="text-sm sm:text-md md:text-lg text-center md:text-left">{project?.summary}</p>
             </div>
           </div>
         ))}

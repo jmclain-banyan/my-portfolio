@@ -17,14 +17,14 @@ const Skill = ({ directionLeft, skill }: Props) => {
     className="group relative flex cursor-pointer">
       <motion.img
         src={urlFor(skill?.image).url()}
-        className="rounded-full border border-gray-500 object-fit w-20 h-20 md:h-24 md:w-24 xl:h-28 xl:w-28 filter group-hover:grayscale transition duration-300 ease-in-out"
+        className="rounded-full border border-gray-500 object-fit w-12 h-12 sm:w-20 sm:h-20 md:h-24 md:w-24 xl:h-28 xl:w-28 filter group-hover:grayscale transition duration-300 ease-in-out"
         alt={skill?.title}
         height={24}
         width={24}
       />
-        <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-out group-hover:bg-white w-20 h-20 md:h-24 md:w-24 xl:h-28 xl:w-28 rounded-full">
+        <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-out group-hover:bg-white w-12 h-12 sm:w-20 sm:h-20 md:h-24 md:w-24 xl:h-28 xl:w-28 rounded-full">
             <div className="flex items-center justify-center h-full">
-                <p className="text-3xl font-bold text-black opacity-100">{`${skill?.progress}%`}</p>
+                <p className="text-1xl sm:text-3xl font-bold text-black opacity-100">{`${skill?.progress}%`}</p>
             </div>
         </div>
     </motion.div>

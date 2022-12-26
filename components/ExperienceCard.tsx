@@ -20,7 +20,7 @@ const ExperienceCard = ({ experience }: Props) => {
   return (
     <article
       className={`flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 
-      w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929] 
+      w-[360px] sm:w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929] 
       hover:opacity-100 opacity-50 cursor-pointer transition-opacity duration-200 overflow-hidden`}
     >
       <motion.div
@@ -30,7 +30,7 @@ const ExperienceCard = ({ experience }: Props) => {
         viewport={{ once: true }}
       >
         <Image
-          className="h-32 w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+          className="h-20 w-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
           src={urlFor(experience?.companyImage).url()}
           alt={experience?.companyName}
           width={200}
@@ -38,13 +38,13 @@ const ExperienceCard = ({ experience }: Props) => {
         />
       </motion.div>
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
-        <p className="font-bold text-2xl mt-1">{experience?.companyName}</p>
+        <h4 className="text-2xl sm:text-4xl font-light">{experience?.jobTitle}</h4>
+        <p className="font-bold text-base sm:text-2xl mt-1">{experience?.companyName}</p>
         <div className="flex space-x-2 my-2">
           {experience?.technologies.map((technology) => (
             <Image
               key={technology._id}
-              className="rounded-full h-10 w-10"
+              className="rounded-full h-6 w-6 sm:w-10 sm:h-10"
               src={urlFor(technology?.image).url()}
               alt={technology?.title}
               width={40}
@@ -52,7 +52,7 @@ const ExperienceCard = ({ experience }: Props) => {
             />
           ))}
         </div>
-        <p className="uppercase py-5 text-gray-300">
+        <p className="uppercase py-2 md:py-5 text-gray-300">
           <>
             {formatDateString(experience?.dateStarted)} -{" "}
             {experience?.isCurrentlyWorkingHere
@@ -61,7 +61,7 @@ const ExperienceCard = ({ experience }: Props) => {
           </>
         </p>
 
-        <ul className="list-disc space-y-4 ml-5 text-lg">
+        <ul className="list-disc space-y-2 sm:space-y-4 ml-5 text-sm sm:text-md md:text-lg">
           {experience?.points.map((point, index) => (
             <li key={index}>{point}</li>
           ))}
