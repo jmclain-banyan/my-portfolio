@@ -20,8 +20,8 @@ const ExperienceCard = ({ experience }: Props) => {
   return (
     <article
       className={`flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 
-      w-[360px] sm:w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929] 
-      hover:opacity-100 opacity-50 cursor-pointer transition-opacity duration-200 overflow-hidden`}
+      w-[360px] sm:w-[500px] md:w-[600px] xl:w-[800px] snap-center p-5 bg-[#292929] 
+      hover:opacity-100 opacity-50 cursor-pointer transition-opacity duration-200 overflow-y-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#88d498]/80 mt-16 sm:mt-10 md:mt-0`}
     >
       <motion.div
         initial={{ y: -100, opacity: 0 }}
@@ -30,7 +30,7 @@ const ExperienceCard = ({ experience }: Props) => {
         viewport={{ once: true }}
       >
         <Image
-          className="h-20 w-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
+          className="h-20 w-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full xl:w-[180px] xl:h-[180px] object-cover object-center float-left"
           src={urlFor(experience?.companyImage).url()}
           alt={experience?.companyName}
           width={200}

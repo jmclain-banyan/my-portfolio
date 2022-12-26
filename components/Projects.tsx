@@ -16,9 +16,9 @@ const Projects = ({projects}: Props) => {
       initial={{opacity: 0}}
       whileInView={{opacity: 1}}
       transition={{duration: 1.5}}
-      className="h-screen relative flex flex-col overflow-hidden text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
+      className="h-screen relative flex flex-col overflow-hidden text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 pt-20 md:pt-0"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Projects</h3>
+      <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-base sm:text-2xl">Projects</h3>
       <div className="relative w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#88d498]/80">
         {projects?.map((project, index) => (
           <div
@@ -39,7 +39,7 @@ const Projects = ({projects}: Props) => {
               />
             </a>
 
-            <div className="space-y-10 md:px-10 max-w-6xl">
+            <div className="space-y-5 sm:space-y-7 md:space-y-10 md:px-10 max-w-6xl">
               <h4 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center">
                 <span className="underline decoration-[#88d498]/50">
                   Project {index + 1} of {projects?.length}:
