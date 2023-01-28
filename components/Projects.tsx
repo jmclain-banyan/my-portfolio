@@ -59,7 +59,7 @@ const Projects = ({projects}: Props) => {
                 ))}
               </div>
 
-              <p className="text-sm sm:text-md md:text-lg text-center md:text-left">{project?.summary}</p>
+              <p className="text-sm sm:text-md md:text-lg text-center md:text-left pb-3 md:pb-0">{project?.summary}</p>
             </div>
           </div>
         ))}

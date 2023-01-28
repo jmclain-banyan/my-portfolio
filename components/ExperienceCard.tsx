@@ -41,7 +41,7 @@ const ExperienceCard = ({ experience }: Props) => {
         <h4 className="text-2xl sm:text-4xl font-light">{experience?.jobTitle}</h4>
         <p className="font-bold text-base sm:text-2xl mt-1">{experience?.companyName}</p>
         <div className="flex space-x-2 my-2">
-          {experience?.technologies.map((technology) => (
+          {/* {experience?.technologies.map((technology) => (
             <Image
               key={technology._id}
               className="rounded-full h-6 w-6 sm:w-10 sm:h-10"
@@ -50,7 +50,7 @@ const ExperienceCard = ({ experience }: Props) => {
               width={40}
               height={40}
             />
-          ))}
+          ))} */}
         </div>
         <p className="uppercase py-2 md:py-5 text-gray-300">
           <>
